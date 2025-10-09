@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KPI WebSocket Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #kpiContainer {
+      display: flex;
+      gap: 20px;
+    }
+    .kpi {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      border-radius: 8px;
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="kpiContainer"></div>
+
+  <script>
+    const container = document.getElementById('kpiContainer');
+    const ws = new WebSocket(`ws://${window.location.hostname}:3000`);
+
+    ws.onopen = () => console.log('Connected to WebSocket server');
+
+    ws.onmessage = (event) => {
+      const numbers = JSON.parse(event.data);
+
+      // Clear container
+      container.innerHTML = '';
+
+      numbers.forEach(num => {
+        const div = document.createElement('div');
+        div.classList.add('kpi');
+        div.textContent = num;
+
+        // Color coding
+        if (num <= 30) {
+          div.style.backgroundColor = 'red';
+          div.style.color = 'white';
+        } else if (num <= 60) {
+          div.style.backgroundColor = 'yellow';
+          div.style.color = 'white';
+        } else {
+          div.style.backgroundColor = 'green';
+          div.style.color = 'white';
+        }
+
+        container.appendChild(div);
+      });
+    };
+
+    ws.onclose = () => console.log('Disconnected from WebSocket server');
+  </script>
+</body>
+</html>

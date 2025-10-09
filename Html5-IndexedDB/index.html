@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndexedDB Example</title>
+</head>
+<body>
+
+    <h1>IndexedDB Example</h1>
+    <button id="storeDataBtn">Store Data</button>
+    <button id="getDataBtn">Get Data</button>
+    <button id="clearDataBtn">Clear Data</button>
+    
+    <ul id="dataList"></ul>
+
+    <script>
+        // Open (or create) the database
+        const dbName = "myDatabase";
+        const storeName = "myStore";
+
+        // Open IndexedDB
+        let db;
+        const request = indexedDB.open(dbName, 1);
+
+        request.onerror = function(event) {
+            console.error("Database error:", event.target.errorCode);
+        };
+
+        request.onsuccess = function(event) {
+            db = event.target.result;
+            console.log("Database opened successfully.");
+        };
+
+        // Create object store (table)
+        request.onupgradeneeded = function(event) {
+            db = event.target.result;
+            if (!db.objectStoreNames.contains(storeName)) {
+                const objectStore = db.createObjectStore(storeName, { keyPath: "id", autoIncrement: true });
+                objectStore.createIndex("name", "name", { unique: false });
+                objectStore.createIndex("age", "age", { unique: false });
+            }
+        };
+
+        function storeData() {
+            const transaction = db.transaction([storeName], "readwrite");
+            const objectStore = transaction.objectStore(storeName);
+            
+            const data = {
+                name: "John Doe",
+                age: 28
+            };
+            
+            const request = objectStore.add(data);
+
+            request.onsuccess = function(event) {
+                console.log("Data stored successfully:", event.target.result);
+            };
+
+            request.onerror = function(event) {
+                console.error("Error storing data:", event.target.errorCode);
+            };
+        }
+
+        function getData() {
+            const transaction = db.transaction([storeName], "readonly");
+            const objectStore = transaction.objectStore(storeName);
+            const request = objectStore.getAll();
+
+            request.onsuccess = function(event) {
+                const data = event.target.result;
+                displayData(data);
+            };
+
+            request.onerror = function(event) {
+                console.error("Error retrieving data:", event.target.errorCode);
+            };
+        }
+
+        // Display Data
+        function displayData(data) {
+            const dataList = document.getElementById("dataList");
+            dataList.innerHTML = ""; 
+            data.forEach(item => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `ID: ${item.id}, Name: ${item.name}, Age: ${item.age}`;
+                dataList.appendChild(listItem);
+            });
+        }
+
+        // Clear Data function
+        function clearData() {
+            const transaction = db.transaction([storeName], "readwrite");
+            const objectStore = transaction.objectStore(storeName);
+            const request = objectStore.clear();
+
+            request.onsuccess = function(event) {
+                console.log("All data cleared");
+                displayData([]);
+            };
+
+            request.onerror = function(event) {
+                console.error("Error clearing data:", event.target.errorCode);
+            };
+        }
+
+        // Event Listeners for buttons
+        document.querySelector("#storeDataBtn").addEventListener("click", storeData);
+        document.querySelector("#getDataBtn").addEventListener("click", getData);
+        document.querySelector("#clearDataBtn").addEventListener("click", clearData);
+    </script>
+</body>
+</html>
