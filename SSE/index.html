@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock-Client</title>
+</head>
+<body>
+    <h1>Stock client</h1>
+    <div id = "stockUpdates">
+    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock-Client</title>
+</head>
+<body>
+    <h1>Stock client</h1>
+    <div id="StockUpdates"></div>
+
+    <script>
+        const eventSource = new EventSource("/events");
+
+        eventSource.onmessage = function (event) {
+            console.log(event.data);
+            document.querySelector("#StockUpdates").innerHTML += `<p>${event.data}</p>`;
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>
