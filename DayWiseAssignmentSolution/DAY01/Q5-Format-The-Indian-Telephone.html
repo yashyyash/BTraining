@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Telephone Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    input {
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      width: 250px;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    input:focus {
+      border-color: #007bff;
+    }
+
+    #phoneError {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+      height: 18px;
+    }
+
+    .valid {
+      border-color: #28a745 !important;
+    }
+
+    .invalid {
+      border-color: #dc3545 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Enter your Indian Phone Number</h3>
+  <input type="tel" id="phone" placeholder="e.g. 9876543210" required maxlength="10">
+  <span id="phoneError"></span>
+
+  <script>
+    const phoneInput = document.querySelector('#phone');
+    const phoneError = document.querySelector('#phoneError');
+
+    phoneInput.addEventListener('input', function () {
+      const phone = this.value.trim();
+      const phonePattern = /^[6-9]\d{9}$/; // Indian numbers start with 6-9 and have 10 digits
+
+      if (phone === "") {
+        phoneError.textContent = "";
+        phoneInput.classList.remove('valid', 'invalid');
+      } else if (!phonePattern.test(phone)) {
+        phoneError.textContent = "Invalid Indian phone number!";
+        phoneInput.classList.add('invalid');
+        phoneInput.classList.remove('valid');
+      } else {
+        phoneError.textContent = "";
+        phoneInput.classList.add('valid');
+        phoneInput.classList.remove('invalid');
+      }
+    });
+  </script>
+</body>
+
+</html>
