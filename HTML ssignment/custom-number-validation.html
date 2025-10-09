@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Custom Validation</title>
+</head>
+
+<body>
+    <input type="number" id="age" placeholder="Enter your age" required maxlength="3">
+    <span id="ageError"></span>
+
+    <script>
+        document.querySelector('#age').addEventListener('input', function () {
+            const age = Number.parseInt(this.value, 10);
+            const ageError = document.querySelector('#ageError');
+            if (Number.isNaN(age) || age < 16 || age > 100) {
+                ageError.textContent = 'Your age must be between 16 and 100';
+                // add validation that we need 2 numbers like 16 from 100 , 3 digit or 2 digit needed and 0 not in tens place!
+            } else {
+                ageError.textContent = '';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

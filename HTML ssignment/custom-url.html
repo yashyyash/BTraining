@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Custom Validation</title>
+</head>
+
+<body>
+    <input type="url" id="websiteUrl" placeholder="Enter your website" required>
+    <span id="urlError"></span>
+    <script>
+        document.querySelector('#websiteUrl').addEventListener('input', function () {
+            const website = this.value;
+            const urlError = document.querySelector('#urlError');
+            const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+            if (!urlPattern.test(website)) {
+                urlError.textContent = 'Invalid Website URL';
+            } else {
+                urlError.textContent = '';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

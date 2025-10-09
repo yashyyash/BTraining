@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Custom Validation</title>
+</head>
+
+<body>
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <span id="emailError"></span>
+    <script>
+        document.querySelector('#email').addEventListener('input', function () {
+            const email = this.value;
+            const emailError = document.querySelector('#emailError');
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@bajaj\.com$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = 'Please enter a valid Bajaj email address (john@bajaj.com)';
+            } else {
+                emailError.textContent = '';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

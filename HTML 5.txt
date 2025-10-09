@@ -1,0 +1,84 @@
+HTML 5
+CSS 3
+SCSS
+
+requirement (MEAN) 
+1> vscode , 
+2> mongo db community server
+3> mongo shell
+4> postman (interceptor tool)
+5> NodeJs LTS VERSION 22....Long Time Support.
+
+1> POC--> Proof of Concepts.
+	MongoDB
+	Express js
+	Angular 20.x
+	Node JS
+
+MEAN is target 
+	SPA --> single page application
+	Authentication 
+	Authorization 
+	Security trimming (trimming is different from remove) 
+	Most of the features of angular framework
+
+	Android Application
+-----------------------------------------------------------------------
+HTML 5 
+	words --> kpi 
+	q> DIFFERENCE BW website and webapp
+	q> Library vs Framework 
+	(framework is collection of libraries, namespace , package)
+	(frame work is rigid)
+	MVC is Architecture point MVC , MVP , MVCC 
+	jQuery (client side)
+	browser is sandbox application.(study sandbox)
+	we select frameworks before writing single line of code
+	
+		
+PRODUCT OWNER -> BUSINESS ANALYST -esting > TECHNO-BUSINESS ANALYST -> Architect -> Development -> testing -> development 
+either spiral binding or waterflow
+
+library is set of functions which satisfy specific need of application
+------------------------------------------------------------------------
+
+what id difference between HTTP and HTTPS
+json Placeholder
+json format as it is restfull api
+jwt
+Http Request and response 
+different version of hhtp
+
+-------------------------------------------------------------------------
+
+browser sandbox .
+when we develop web app and websiie your browser only understand 3 things ...
+1> HTML(display)/XML is storage
+2> CSS - Style WebContents 
+3> Java Script - Dynamic Interaction 
+1 & 2 only gives static 3 makes it dynamic
+
+html and css have parsers 
+js and other have engines.
+
+earlier broswers have their ownway of interpretation
+js invented by Netscape
+ecma standardise js 
+henceforethn  ecma is specification 
+-------------------------------------------------------------------------------
+study kanga X on GitHub
+ecma 6 compatibility table
+V8 capi libav nodejs
+compilers + polyfills (small info have ) (modern browser old code)
+babel.
+js + ts 
+tsc --> .exe --> js src and then browsers in js.
+ts is superset of js 
+why we need ts when we have js
+can I use .com ---> gives feature of html5 and css 3
+different browsers different supports mostly -moz , -moz and so on ....
+-------------------------------------------------------------------------------
+Defination of html5
+
+
+https://codepen.io/pravinkumarcode/pen/zYLZwep

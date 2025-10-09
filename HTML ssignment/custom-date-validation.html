@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Custom Validation</title>
+</head>
+
+<body>
+    <input type="datetime-local" id="doj" required>
+    <span id="dateError"></span>
+    <script>
+        document.querySelector('#doj').addEventListener('input', function () {
+            const dob = new Date(this.value);
+            const dateError = document.querySelector('#dateError');
+            const today = new Date();
+            console.log(dob)
+            console.log(today)
+            if (dob <= today) {
+                dateError.textContent = 'Date of Joining cannot be in the past!';
+            } else {
+                dateError.textContent = '';
+            }
+        });
+
+    </script>
+</body>
+
+</html>
