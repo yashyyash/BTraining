@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Vacation Planner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f7f7f7;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #summary {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #34495e;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: none;
+      background-color: #ecf0f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Vacation Planner</h1>
+
+  <label for="location">Choose your destination:</label>
+  <input list="locations" id="location" placeholder="Select location">
+  <datalist id="locations">
+    <option value="Paris">
+    <option value="New York">
+    <option value="Tokyo">
+    <option value="London">
+    <option value="Sydney">
+    <option value="Bali">
+  </datalist>
+  <br>
+
+  <label for="checkin">Check-in date:</label>
+  <input type="date" id="checkin">
+  <br>
+
+  <label for="checkout">Check-out date:</label>
+  <input type="date" id="checkout">
+  <br>
+
+  <button id="planBtn">Plan My Vacation</button>
+
+  <div id="summary"></div>
+
+  <script>
+    const planBtn = document.getElementById('planBtn');
+    const summary = document.getElementById('summary');
+
+    planBtn.addEventListener('click', () => {
+      const location = document.getElementById('location').value;
+      const checkin = document.getElementById('checkin').value;
+      const checkout = document.getElementById('checkout').value;
+
+      if (!location || !checkin || !checkout) {
+        alert("Please select a location and both dates!");
+        return;
+      }
+
+      const checkinDate = new Date(checkin);
+      const checkoutDate = new Date(checkout);
+
+      if (checkoutDate <= checkinDate) {
+        alert("Check-out date must be after check-in date!");
+        return;
+      }
+
+      const days = Math.round((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
+
+      summary.style.display = 'block';
+      summary.innerHTML = `
+        Your vacation to <b>${location}</b> is planned!<br>
+        Check-in: <b>${checkin}</b><br>
+        Check-out: <b>${checkout}</b><br>
+        Total days: <b>${days}</b>
+      `;
+    });
+  </script>
+
+</body>
+</html>
