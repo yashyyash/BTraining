@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        /*First Example*/
+		html{
+			font-family: verdana;
+			font-size: 16px;
+		}
+		/*Observe No Change on page design - Parent/Child Relation >*/
+		nav a{
+			text-decoration: none;
+			font-weight: bold;
+            color: black;
+		}
+        nav a:visited{
+			color: red;
+		}
+        nav a:hover{
+			color: green;
+		}
+        div{
+			padding: 20px;
+		}
+		div:first-child {
+			font-size: 20px;
+		}
+        div::selection{
+			color: #fff;
+			background-color: #000066;
+		}
+		div::first-line{
+			font-size: 24px;
+			font-size: 2rem;
+			color: green;
+		}
+        div:first-letter{
+			font-size: 32px;
+			font-size: 3rem;
+            color: red;
+		} 
+
+        /* div:nth-child(odd){
+            color: blueviolet;
+        }  */
+    </style>
+</head>
+<body>
+    <nav>
+		<ul>
+			<li><a href="https://google.com">Page One</a></li>
+			<li><a href="#one">Page Two</a></li>
+			<li><a href="#two">Page Three</a></li>
+			<li><a href="#three">Page Four</a></li>
+			<li><a href="#four">Page Five</a></li>
+		</ul>
+	</nav>
+	<article>
+		<section>
+			<div>
+				First in section Bacon ipsum dolor amet brisket picanha short loin, pancetta flank pig frankfurter cow turducken jerky fatback shoulder. Turkey fatback kielbasa hamburger, turducken pork loin bresaola swine biltong. Ham bacon biltong sirloin tri-tip jerky frankfurter meatloaf beef ribs boudin. Frankfurter pig tri-tip meatloaf spare ribs pork loin tail jerky, bresaola landjaeger. Cupim flank beef ribs strip steak, boudin sausage beef pig porchetta kielbasa kevin short ribs turkey swine alcatra. Biltong andouille salami venison. Prosciutto beef ribs pig, tongue ball tip spare ribs meatball venison jowl turducken kielbasa frankfurter alcatra shankle.
+			</div>
+			<div>
+				Ham hock pork belly boudin meatloaf pig turducken pork chop porchetta prosciutto. Tongue bacon swine drumstick rump short ribs. Tail meatloaf shoulder turkey pork pork chop drumstick bacon jerky pancetta cow picanha. Shoulder swine meatloaf pork belly boudin kevin. Turducken pork belly pork sirloin shank pork chop pancetta ball tip meatloaf boudin beef ribs tenderloin turkey shoulder filet mignon. Beef ribs turkey landjaeger frankfurter tail tri-tip jowl bacon prosciutto t-bone kielbasa kevin. Boudin landjaeger fatback meatball, pork chop short ribs bresaola ribeye brisket chuck ham.
+			</div>
+			<div>
+				Picanha bresaola ham andouille chuck, kielbasa hamburger rump prosciutto shank. Jowl doner pancetta shankle boudin pork hamburger alcatra landjaeger tri-tip meatball. Short ribs cupim tri-tip pork chop, cow biltong ball tip flank rump landjaeger venison short loin salami pancetta filet mignon. Alcatra t-bone beef filet mignon, beef ribs pork belly jerky prosciutto swine cow andouille turducken kielbasa pork. Pastrami brisket t-bone venison rump ham hock, turducken fatback pork meatball frankfurter.
+			</div>
+		</section>
+		<section>
+			<div>
+				Doner ham hock cupim pork belly drumstick ground round meatloaf brisket swine sausage turkey. Drumstick ribeye short ribs pork loin. Frankfurter rump ball tip fatback doner meatball hamburger pastrami meatloaf leberkas picanha pig andouille salami. Corned beef pork chop alcatra, ball tip filet mignon flank chuck salami frankfurter. Bacon kielbasa sausage, picanha beef strip steak jerky leberkas pork loin shoulder landjaeger. Kevin spare ribs prosciutto, ribeye jerky ham cow strip steak pork chop filet mignon hamburger salami tri-tip.
+			</div>
+			<div>
+				Ball tip capicola pork loin filet mignon, hamburger swine shankle meatball. Ham strip steak short loin meatball drumstick bresaola capicola fatback pastrami sausage beef shankle. Jerky leberkas pastrami ham pork belly jowl rump, shank bresaola. Andouille chicken flank spare ribs, shankle shank beef ribs tongue.
+			</div>
+			<div>
+				First in section Bacon ipsum dolor amet brisket picanha short loin, pancetta flank pig frankfurter cow turducken jerky fatback shoulder. Turkey fatback kielbasa hamburger, turducken pork loin bresaola swine biltong. Ham bacon biltong sirloin tri-tip jerky frankfurter meatloaf beef ribs boudin. Frankfurter pig tri-tip meatloaf spare ribs pork loin tail jerky, bresaola landjaeger. Cupim flank beef ribs strip steak, boudin sausage beef pig porchetta kielbasa kevin short ribs turkey swine alcatra. Biltong andouille salami venison. Prosciutto beef ribs pig, tongue ball tip spare ribs meatball venison jowl turducken kielbasa frankfurter alcatra shankle.
+			</div>
+		</section>
+	</article>
+</body>
+</html>
+

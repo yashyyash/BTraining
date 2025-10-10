@@ -1,0 +1,20 @@
+li:first-child {
+  color: red;
+  font-weight: bold;
+}
+li:last-child {
+  color: blue;
+  font-weight: bold;
+}
+li:nth-child(3) {
+  color: green;
+  font-weight: bold;
+}
+
+ul#anotherList li:nth-child(odd) {
+  background-color: black;
+}
+
+ul#anotherList li:nth-child(even) {
+  background-color: orange;
+}
