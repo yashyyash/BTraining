@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css-Basics</title>
+    
+    <!--// precedence start from bottom top >> third party overriden by >> 
+    document level overriden by  Inline-->
+
+    <!-- internal is Medium Priority -->
+    <!-- <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            color: darkblue;
+        }
+    </style> -->
+
+    <!-- EXTERNAL IS LOWEST PRIORITY -->
+    <link rel="stylesheet" href="styles/styles.css"> 
+
+    
+</head>
+<body>
+    <!-- inline has the highest priority -->
+    <!-- <h1 style="color: red;">welcome to Bajaj Finserv Ltd.</h1> -->
+    <h1 >welcome to Bajaj Finserv Ltd.</h1>
+    <h1 class="dev-title">Bajaj from DEV-CLASS</h1>
+    <h1 id ="dev-title">Welcome to Pune Training center</h1>
+</body>
+</html>

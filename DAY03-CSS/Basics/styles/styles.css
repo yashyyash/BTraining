@@ -1,0 +1,14 @@
+h1{
+    color: rgb(245, 0, 0);
+    text-align: center;
+}
+
+.dev-title{
+    color: bisque;
+    text-align: center;
+}
+
+#dev-title{
+    color: purple;
+    text-align: center;
+}
