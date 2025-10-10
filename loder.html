@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Green Rotating Loader</title>
+  <style>
+    /* Full-page center */
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:system-ui,Segoe UI,Roboto,Arial;
+      background:#ffffff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .wrap {
+      height:100vh;                 /* full viewport height */
+      display:flex;
+      align-items:center;
+      justify-content:center;       /* center horizontally */
+      flex-direction:column;        /* stack loader + text */
+      gap:12px;
+    }
+
+    /* Loader */
+    .loader {
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      border:8px solid rgba(0,128,0,0.15); /* subtle ring */
+      border-top-color:#00B050;              /* bright green for the rotating part */
+      animation:spin 0.9s linear infinite;
+      box-sizing:border-box;
+      /* optional subtle shadow */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Loading label */
+    .label {
+      color:#007a33;       /* darker green text */
+      font-size:14px;
+      letter-spacing:0.2px;
+    }
+
+    /* small responsive tweak */
+    @media (max-width:420px){
+      .loader { width:48px; height:48px; border-width:6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="status" aria-live="polite" aria-label="Loading">
+    <div class="loader" aria-hidden="true"></div>
+    <div class="label">Loading…</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+.block {
+  display: block;
+  background-color: lightblue;
+  margin: 10px 0;
+  padding: 10px;
+}
+.inline {
+  display: inline;
+  background-color: lightgreen;
+  margin: 5px;
+  padding: 5px;
+}
+.inline-block {
+  display: inline-block;
+  background-color: lightcoral;
+  width: 150px;
+  height: 50px;
+  margin: 5px;
+  padding: 5px;
+}
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  background-color: lightyellow;
+}
+
+.flex-item {
+  background-color: lightgray;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+}
+/* The fr unit is used to divide the space proportionally */
+/*Create 2 columns, each taking 1 fraction (equal width) of available space*/
+/*
+Let’s say the container is 600px wide.
+
+repeat(2, 1fr) → creates 2 equal columns.
+
+Each column gets 1fr → total 2fr = 600px
+ each column = 600px ÷ 2 = 300px
+
+*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  background-color: lightblue;
+}
+
+.grid-item {
+  background-color: lightpink;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+/* Column Layout */
+.multi-column {
+  column-count: 2;
+  column-gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+
+/*
+| Scenario                               | When to Use    |
+| -------------------------------------- | -------------- |
+| Page layout or sections                | `block`        |
+| Styling a word or part of text         | `inline`       |
+| Buttons, icons, or small aligned boxes | `inline-block` |
+
+*/
