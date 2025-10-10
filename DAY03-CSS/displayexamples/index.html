@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+    <!-- Block -->
+    <div class="block">Block Element 1</div>
+    <div class="block">Block Element 2</div>
+    <!-- Inline -->
+    <span class="inline">Inline Element 1</span> <span class="inline">Inline Element 2</span>
+    <!-- Inline-Block -->
+    <div class="inline-block">Inline-Block Element 1</div>
+    <div class="inline-block">Inline-Block Element 2</div>
+    <!-- None -->
+    <div class="none" id="notVisible">This will not be displayed</div>
+    <div>This will be displayed</div>
+    <!-- flex -->
+    <div class="flex">
+        <div class="flex-item">Flex Item 1</div>
+        <div class="flex-item">Flex Item 2</div>
+        <div class="flex-item">Flex Item 3</div>
+    </div>
+    <!-- Grid -->
+    <div class="grid">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+        <div class="grid-item">Grid Item 3</div>
+        <div class="grid-item">Grid Item 4</div>
+    </div>
+    <div class="multi-column">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante
+            dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+        <p>Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum
+            lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+            himenaeos.</p>
+    </div>
+    <script>
+        console.log(document.querySelector("#notVisible").innerHTML);
+    </script>
+</body>
+
+</html>

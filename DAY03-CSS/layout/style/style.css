@@ -1,0 +1,94 @@
+body {
+    font-family: Arial,sans-serif;
+    /*Twelve*/
+    margin: 0;
+    padding: 0;
+}
+#header {
+	width: 100%;
+	height: 80px;
+	background-color: #000000;
+	z-index: 10;
+	
+	/*First*/
+	position: fixed;
+
+	/*Sixth*/
+	padding: 20px;
+
+	/*Seventh*/
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+
+	/*Fifteen*/
+	text-align: center;
+}
+#header li {
+	/*Second*/
+	display: inline;
+
+	/*Thirteen*/
+	padding-right: 20px;
+}
+#header a {
+	color: #ffffff;
+	text-decoration: none;
+}
+#header a:hover {
+	color: #99ccee;
+}
+
+#syne-block{
+	width: 100%;
+	background-color: #99ccee;
+	/*Eight*/
+	padding: 70px 0 0 0;
+
+	/*Eleven*/
+	overflow: auto;
+}
+#syne-banner-text{
+	text-align: center;
+	font-size: 300%;
+}
+#side-text{
+	width: 400px;
+	font-size: 150%;
+	/*Forth*/
+	display: inline-block;
+
+	/*Ten*/
+	margin-left: 10%;
+}
+#css-image{
+	width: 300px;
+	height: 300px;
+	/*Fifth*/
+	display: inline-block;
+
+	/*Nine*/
+	float: right;
+	margin-right: 10%;
+}
+#modules-block{
+	/*Forteen*/
+	text-align: center;
+
+	/*Seventeen*/
+	margin-top: 30px;
+}
+.box {
+	border: solid #99ccee 3px;
+	width: 200px;
+	height: 200px;
+	/*Third*/
+	display: inline-block;
+	
+	/*Sixteen*/
+	vertical-align: top;
+}
+.box-label {
+	background-color: #99ccee;
+	text-align: center;
+	margin-top: 0;
+}
