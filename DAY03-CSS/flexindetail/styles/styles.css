@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+
+.flex-container {
+  display: flex; /* Main flex container */
+  flex-direction: column; /* Arrange items in a row (default) */
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+  justify-content: space-between; /* Distribute items with space between them */
+  align-items: center; /* Align items vertically in the center */
+  align-content: flex-start; /* Align lines to the start of the flex container */
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  gap: 10px; /* Space between flex items */
+  height: 80vh; /* Flex container height */
+}
+
+.flex-item {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 10px;
+  flex: 1 1 200px; /* Flex-grow, flex-shrink, flex-basis */
+  order: 0; /* Default order */
+  margin: 5px;
+}
+
+.item1 {
+  order: 5; /* Change the order of item 1 */
+  flex-grow: 2; /* Grow twice as much as others */
+}
+
+.item2 {
+  order: 2; /* Change the order of item 2 */
+  flex-shrink: 2; /* Shrink twice as much as others */
+}
+
+.item3 {
+  order: 3;
+  align-self: flex-end; /* Align this item to the end of the container */
+}
+
+.item4 {
+  order: 5;
+  flex: 1 1 100px; /* Fixed size regardless of container */
+}
+
+.item5 {
+  order: 4; /* Change the order of item 5 */
+}
