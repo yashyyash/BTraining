@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS3 Selector Demo</title>
+  <link rel="stylesheet" href="Style/Assignment1.css">
+</head>
+<body>
+
+  <h1>CSS3 Selector Demo</h1>
+
+  <!-- :empty demo -->
+  <p></p> <!-- This paragraph is empty and will get red dashed border -->
+  <p>This paragraph is NOT empty and will not get a border.</p>
+
+  <!-- :target demo -->
+  <nav>
+    <a href="#section1">Go to Section 1</a> |
+    <a href="#section2">Go to Section 2</a>
+  </nav>
+
+  <section id="section1">
+    <h2>Section 1</h2>
+    <p>This section becomes highlighted when targeted via #section1 link.</p>
+  </section>
+
+  <section id="section2">
+    <h2>Section 2</h2>
+    <p>This section becomes highlighted when targeted via #section2 link.</p>
+  </section>
+
+  <!-- :not(...) demo -->
+  <ul>
+    <li class="special">Special Item</li>
+    <li>Regular Item 1</li>
+    <li>Regular Item 2</li>
+  </ul>
+
+  <!-- Attribute selectors demo -->
+  <p>Links attribute selectors:</p>
+  <a href="https://example.com">Secure Example.com Link</a><br>
+  <a href="http://example.org">Non-secure Example.org Link</a><br>
+  <a href="https://google.com">Secure Google.com Link</a>
+
+</body>
+</html>
