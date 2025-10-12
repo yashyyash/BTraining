@@ -1,0 +1,27 @@
+#Dashboard-Section{
+    height: 100vh;
+    background-color: rgb(155, 195, 253);
+    border-radius: 2%;
+
+    /* Centering Child Elements */
+    /* in #id dashboard section, div outer box is child of section*/
+    display: flex;
+
+    /* justify content horizontally */
+    justify-content: center; 
+
+    /* justify content horizontally */
+    align-items: center;
+}
+
+.Outer-Box{
+    background-color: blue;
+    height: 80vh;
+    width: 80vw;
+    border: 10px dotted black;
+}
+
+.Outer-Box h1{
+    color: white;
+    text-align: center;
+}
