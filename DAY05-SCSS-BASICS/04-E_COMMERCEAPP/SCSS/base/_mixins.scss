@@ -1,0 +1,38 @@
+@import './function';
+
+// Mixin for flex container
+@mixin flex-container($direction: row, $wrap: wrap, $justify: center, $align: center, $gap: 20px) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Mixin for rounded corners
+@mixin rounded-corners($radius: 5px) {
+  border-radius: $radius;
+}
+
+// Mixin for box sizing
+@mixin box-sizing($type: border-box) {
+  box-sizing: $type;
+}
+
+// Mixin for text-center
+@mixin text-center {
+  text-align: center;
+}
+
+// Mixin for fixed dimensions
+@mixin fixed-dimensions($width, $height) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+}
+
+// Mixin for transition
+@mixin transition($property: all, $duration: 0.3s, $timing: ease-in-out) {
+  transition: $property $duration $timing;
+}

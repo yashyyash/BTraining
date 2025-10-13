@@ -1,0 +1,81 @@
+/* Eric Meyer’s Reset CSS (simplified) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote::before, blockquote::after,
+q::before, q::after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+// base/_reset.scss
+
+// --- Font Imports ---
+@font-face {
+    font-family: 'Dited';
+    src: url('../fonts/Dited.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ABeeZee';
+    src: url('../fonts/ABeeZee-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// --- CSS Reset ---
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+ //   font-family: $font-primary;
+    line-height: 1.6;
+ //   color: $black;
+   // background-color: $light-gray-bg; // Apply a light background to the whole page
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    //font-family: $font-headings;
+    font-weight: normal;
+    //color: $navy;
+}

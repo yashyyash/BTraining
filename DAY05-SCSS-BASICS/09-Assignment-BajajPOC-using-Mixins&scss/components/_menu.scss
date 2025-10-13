@@ -1,0 +1,107 @@
+// nav {
+//   background: $secondary;
+//   padding: 1.2em 0;
+//   display: flex;
+//   justify-content: center;
+//   gap: 2em;
+//   border-radius: $base-radius;
+//   @include box-shadow(light);
+
+//   a {
+//     color: $light;
+//     font-weight: 600;
+//     text-decoration: none;
+//     font-size: 1.1em;
+//     position: relative;
+//     padding: 0.25em 0;
+//     transition: $transition;
+
+//     &:after {
+//       content: "";
+//       display: block;
+//       height: 2px;
+//       width: 0%;
+//       background: $accent;
+//       transition: width 0.3s ease;
+//       position: absolute;
+//       bottom: -4px;
+//       left: 0;
+//     }
+
+//     &:hover {
+//       color: $accent;
+//       &:after { width: 100%; }
+//     }
+//   }
+// }
+
+// components/_menu.scss
+
+#content {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: $white;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+// Styles for the top header area
+#content > header {
+    padding: $spacing-unit * 1.5 $spacing-unit * 2;
+    background: $black;
+    color: $white;
+    text-align: center;
+
+    #title {
+        color: $white;
+        font-size: 2.8rem;
+    }
+
+    #subtitle {
+        font-family: $font-primary;
+        color: darken($white, 25%);
+        font-size: 1.1rem;
+    }
+}
+
+// Styles for the main navigation bar
+nav {
+    background: $navy;
+    padding: $spacing-unit * 1.25;
+    text-align: center;
+    position: sticky; // Make nav stick to the top on scroll
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    h1 {
+        // "Site Navigation" is visually redundant, so we hide it
+        // but it's good for screen readers.
+        display: none;
+    }
+
+    a {
+        color: $white;
+        margin: 0 $spacing-unit;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        padding: 10px 0;
+        position: relative; // For the hover effect
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: $white;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}

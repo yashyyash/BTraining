@@ -1,0 +1,23 @@
+.intro {
+  background-color: $background-color;
+  padding: $padding;
+  @include text-center;
+
+  .intro-text {
+    margin-bottom: $margin;
+  }
+
+  .intro-images {
+    @include flex-container();
+
+    .intro-image {
+      @include rounded-corners($border-radius);
+      @include fixed-dimensions(200px, 200px);
+      @include box-sizing();
+
+      img {
+        @include fixed-dimensions(100%, 100%);
+      }
+    }
+  }
+}

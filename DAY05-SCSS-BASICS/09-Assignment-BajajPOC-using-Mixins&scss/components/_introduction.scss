@@ -1,0 +1,201 @@
+// #intro {
+//   @include flex-center;
+//   text-align: center;
+//   padding: 5em 1em;
+//   background: linear-gradient(135deg, #F5F7FA 0%, #E0E4FF 100%);
+//   color: $secondary;
+//   border-radius: $base-radius;
+//   @include box-shadow(medium);
+
+//   span {
+//     font-size: 1.5em;
+//     font-weight: 500;
+//     line-height: 1.6;
+//   }
+// }
+
+// article {
+//   background: $light;
+//   padding: 2.5em;
+//   margin: 2em auto;
+//   width: 90%;
+//   border-radius: $base-radius;
+//   @include box-shadow(light);
+//   @include card-hover;
+
+//   h1 {
+//     color: $primary;
+//     font-size: 2em;
+//     margin-bottom: 0.5em;
+//   }
+
+//   p {
+//     color: shade($secondary, 20%);
+//     line-height: 1.6;
+//     font-size: 1.05em;
+//   }
+
+//   ul {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+//     gap: 1em;
+//     margin-top: 1em;
+
+//     li {
+//       background: $accent;
+//       color: $light;
+//       padding: 1em;
+//       border-radius: $base-radius;
+//       text-align: center;
+//       @include card-hover;
+
+//       h1 {
+//         font-size: 1.1em;
+//         margin-bottom: 0.3em;
+//       }
+
+//       p {
+//         font-size: 0.9em;
+//       }
+//     }
+//   }
+// }
+
+// footer {
+//   text-align: center;
+//   background: $secondary;
+//   color: $light;
+//   padding: 3em 0;
+//   border-radius: $base-radius;
+//   font-size: 0.9em;
+//   @include box-shadow(medium);
+// }
+
+// components/_introduction.scss
+
+// --- General Section Styling ---
+section,
+article {
+    padding: ($spacing-unit * 4) ($spacing-unit * 2);
+    border-bottom: 1px solid $border-color;
+
+    // Center-aligned headings for a clean look
+    > h1, > header > h1 {
+        text-align: center;
+        margin-bottom: $spacing-unit;
+        font-size: 3rem;
+    }
+     > h2, > header > h2 {
+        text-align: center;
+        margin-bottom: $spacing-unit * 2;
+        font-family: $font-primary;
+        color: $black;
+        font-size: 1.5rem;
+    }
+}
+
+// --- Welcome Section (#intro) ---
+#intro {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $black;
+    background-color: $white;
+    border-bottom: none;
+    padding-top: $spacing-unit * 3;
+    padding-bottom: $spacing-unit * 3;
+}
+
+// --- Topics Section (#topics) ---
+#topics {
+    background-color: $light-gray-bg;
+
+    > p {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto $spacing-unit * 3;
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    ul {
+        @include flex-container(center, stretch, row);
+        flex-wrap: wrap;
+        gap: $spacing-unit * 2;
+
+        li {
+            @include card-style();
+            // This makes the cards responsive. They will try to be ~280px wide
+            // and wrap to the next line if there's no space.
+            flex: 1 1 280px;
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: $spacing-unit * 0.5;
+            }
+        }
+    }
+}
+
+// --- About Section (#about) ---
+#about {
+    p {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: -$spacing-unit; // Adjust spacing
+    }
+}
+
+// --- Contact Section (#contact) ---
+#contact {
+    background-color: $light-gray-bg;
+
+    form {
+        max-width: 700px;
+        margin: 0 auto;
+        @include flex-container(center, center, column);
+        gap: $spacing-unit;
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: $spacing-unit;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+            font-family: $font-primary;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+            &:focus {
+                outline: none;
+                border-color: $navy;
+                box-shadow: 0 0 0 3px rgba($navy, 0.2);
+            }
+        }
+
+        input[type="submit"] {
+            @include button-style();
+            align-self: flex-end; // Push button to the right
+            width: auto;
+        }
+    }
+}
+
+// --- Footer ---
+footer {
+    background: $black;
+    color: $white;
+    text-align: center;
+    padding: $spacing-unit * 2.5;
+
+    a {
+        color: $white;
+        font-weight: bold;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+
+        &:hover {
+            color: darken($white, 20%);
+        }
+    }
+}

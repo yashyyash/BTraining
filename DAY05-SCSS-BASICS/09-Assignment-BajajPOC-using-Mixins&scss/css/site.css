@@ -1,0 +1,346 @@
+@charset "UTF-8";
+/* Eric Meyer’s Reset CSS (simplified) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Dited";
+  src: url("../fonts/Dited.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ABeeZee";
+  src: url("../fonts/ABeeZee-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+#content {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #ffffff;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+#content > header {
+  padding: 1.5rem 2rem;
+  background: #1c1c1c;
+  color: #ffffff;
+  text-align: center;
+}
+#content > header #title {
+  color: #ffffff;
+  font-size: 2.8rem;
+}
+#content > header #subtitle {
+  font-family: "ABeeZee", sans-serif;
+  color: rgb(191.25, 191.25, 191.25);
+  font-size: 1.1rem;
+}
+
+nav {
+  background: #0a2351;
+  padding: 1.25rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+nav h1 {
+  display: none;
+}
+nav a {
+  color: #ffffff;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 10px 0;
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+section,
+article {
+  padding: 4rem 2rem;
+  border-bottom: 1px solid #e1e4e8;
+}
+section > h1, section > header > h1,
+article > h1,
+article > header > h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+section > h2, section > header > h2,
+article > h2,
+article > header > h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "ABeeZee", sans-serif;
+  color: #1c1c1c;
+  font-size: 1.5rem;
+}
+
+#intro {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1c1c1c;
+  background-color: #ffffff;
+  border-bottom: none;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+#topics {
+  background-color: #f5f7fa;
+}
+#topics > p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+#topics ul {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+#topics ul li {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#topics ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+#topics ul li {
+  flex: 1 1 280px;
+}
+#topics ul li h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+#about p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: -1rem;
+}
+
+#contact {
+  background-color: #f5f7fa;
+}
+#contact form {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+#contact form input[type=text],
+#contact form input[type=email] {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e1e4e8;
+  border-radius: 5px;
+  font-family: "ABeeZee", sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#contact form input[type=text]:focus,
+#contact form input[type=email]:focus {
+  outline: none;
+  border-color: #0a2351;
+  box-shadow: 0 0 0 3px rgba(10, 35, 81, 0.2);
+}
+#contact form input[type=submit] {
+  background-color: #0a2351;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: "ABeeZee", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#contact form input[type=submit]:hover {
+  background-color: rgb(4.3956043956, 15.3846153846, 35.6043956044);
+  transform: translateY(-2px);
+}
+#contact form input[type=submit] {
+  align-self: flex-end;
+  width: auto;
+}
+
+footer {
+  background: #1c1c1c;
+  color: #ffffff;
+  text-align: center;
+  padding: 2.5rem;
+}
+footer a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+footer a:hover {
+  color: #cccccc;
+}
+
+@media (max-width: 992px) {
+  #topics ul li {
+    flex-basis: 320px;
+  }
+  section,
+  article {
+    padding: 3rem 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  #content > header {
+    padding: 1rem 1.5rem;
+  }
+  #content > header #title {
+    font-size: 2rem;
+  }
+  #content > header #subtitle {
+    font-size: 1rem;
+  }
+  nav {
+    padding: 1rem;
+  }
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 1rem;
+  }
+  #intro {
+    font-size: 1.5rem;
+  }
+  section,
+  article {
+    padding: 2rem 1rem;
+  }
+  section > h1, section > header > h1,
+  article > h1,
+  article > header > h1 {
+    font-size: 2.2rem;
+  }
+  section > h2, section > header > h2,
+  article > h2,
+  article > header > h2 {
+    font-size: 1.2rem;
+  }
+  #topics ul {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #contact form input[type=submit] {
+    align-self: stretch;
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=site.css.map */

@@ -1,0 +1,26 @@
+
+// Import variables
+@import 'base/variables';
+
+// Global styles (optional)
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: $padding;
+}
+
+// Import functions and mixins
+@import 'base/function';
+@import 'base/mixins';
+
+// Import reset styles
+@import 'base/reset';
+
+// Import components
+@import 'components/menu';
+@import 'components/featured-products';
+@import 'components/introduction';
+@import 'components/about';
+@import 'components/footer';
