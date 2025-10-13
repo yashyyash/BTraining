@@ -1,0 +1,44 @@
+/* components/_form.scss */
+
+input {
+    float: left;
+    clear: left;
+    margin: 0.16em;
+    padding: 0.25em;
+    background-color: $color-orange-light;
+    color: $color-dark-brown;
+    border-color: $color-orange;
+    outline: 0;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+
+    &:invalid:focus {
+        background-color: rgba(67, 33, 0, 0.22);
+    }
+}
+
+:focus {
+    box-shadow: 0 0 0.25em 0.125em $color-focus-shadow;
+}
+
+:required {
+    background-color: $color-orange-lightest;
+}
+
+:valid {
+    background-color: $color-white;
+
+    &::-webkit-input-placeholder {
+        color: $color-orange-dark;
+        font-style: italic;
+    }
+}
+
+:invalid::-webkit-input-placeholder {
+    color: $color-orange-dark;
+    font-style: italic;
+}
+
+:not([type=submit]):optional {
+    border-style: dashed;
+}

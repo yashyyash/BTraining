@@ -1,0 +1,62 @@
+/* components/_topics-list.scss */
+
+#topics {
+    ul {
+        position: relative;
+        height: 8em;
+        width: 98.5%;
+        margin-top: 1em;
+        border-radius: $border-radius-large;
+        box-shadow: 0.5em 0.5em 0.5em $color-gray;
+        column-count: 3;
+        column-gap: 0;
+    }
+
+    li {
+        text-align: center;
+        padding: 0.5em;
+        cursor: crosshair;
+
+        h1 {
+            font-size: 1em;
+        }
+
+        p {
+            position: absolute;
+            display: none;
+            top: 10em;
+            left: 2em;
+        }
+
+        // Background color pattern
+        &:nth-child(3n) {
+            background-color: $color-orange-light;
+        }
+        &:nth-child(3n-1) {
+            background-color: $color-orange-lighter;
+        }
+        &:nth-child(3n-2) {
+            background-color: $color-orange-lightest;
+        }
+
+        // Rounded corners for the grid
+        &:first-child { border-top-left-radius: $border-radius-large; }
+        &:nth-child(4) { border-bottom-left-radius: $border-radius-large; }
+        &:nth-child(9) { border-top-right-radius: $border-radius-large; }
+        &:last-child { border-bottom-right-radius: $border-radius-large; }
+
+        &:hover {
+            background-color: $color-dark-brown;
+            color: $color-orange-lightest;
+
+            p {
+                display: inherit;
+                color: $color-orange-dark;
+            }
+        }
+
+        &:last-child:hover h1 {
+            transform: scale(2) skew(45deg, -4deg) rotate(180deg);
+        }
+    }
+}

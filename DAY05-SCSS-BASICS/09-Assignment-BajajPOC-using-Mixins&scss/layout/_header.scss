@@ -1,0 +1,50 @@
+/* layout/_header.scss */
+
+nav {
+    background-color: $color-dark-brown;
+    line-height: 2em;
+
+    h1 {
+        display: none;
+    }
+
+    a {
+        font-size: 1.25em;
+        padding-left: 1em;
+        color: rgba(0, 0, 0, 0); // Transparent color
+        text-shadow: 0.16em 0.16em 0.16em $color-orange-light;
+
+        &:hover {
+            color: $color-orange-light;
+        }
+    }
+}
+
+#titles {
+    background-color: $color-gray;
+    padding-left: 1.5em;
+    cursor: pointer;
+    border-top-left-radius: $border-radius-large;
+    border-top-right-radius: $border-radius-large;
+}
+
+#title,
+#subtitle {
+    font-family: $font-display;
+    opacity: 0.75;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+#title {
+    font-size: 6em;
+    font-weight: bold;
+    text-shadow: 0.16em 0.16em 0.5em $color-orange-dark;
+    color: hsla(210, 100%, 10%, 0.75);
+}
+
+#subtitle {
+    font-size: 3em;
+}

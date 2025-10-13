@@ -1,0 +1,43 @@
+/* base/_typography.scss */
+
+:root {
+    background-color: $color-dark-brown;
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-dark-brown;
+    padding-top: 1em;
+    background-repeat: no-repeat;
+
+    // Gradient Background
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0.70, $color-teal), color-stop(0.30, $color-dark-brown));
+    background: -ms-linear-gradient(bottom, $color-dark-brown 30%, $color-teal 70%);
+    background: linear-gradient(to top, $color-dark-brown 30%, $color-teal 70%);
+}
+
+h1, h2 {
+    text-shadow: 0.16em 0.016em 0.25em $color-orange-dark;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+a {
+    color: $color-gold;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-blue;
+    }
+}
+
+::selection {
+    background-color: $color-orange;
+    color: $color-white;
+}

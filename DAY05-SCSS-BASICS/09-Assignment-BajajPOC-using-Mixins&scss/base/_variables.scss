@@ -1,38 +1,38 @@
-// // Colors
-// $primary: #FFD700;   // Gold
-// $secondary: #333333; // Dark Gray / Black shade
-// $accent: #FFFFFF;    // White
-// $dark: #000000;      // Pure Black
-// $light: #F5F5F5;    // Light Gray / off-white
+/* base/_variables.scss */
 
-// // Typography
-// $font-stack: 'Segoe UI', Arial, sans-serif;
-// $heading-stack: 'Montserrat', sans-serif;
+// FONT IMPORTS
+@font-face {
+    font-family: 'YashName';
+    src: url(../Fonts/ABeeZee-Italic.woff) format('woff');
+}
+@font-face {
+    font-family: 'YashuNameu';
+    src: url(../Fonts/ABeeZee-Italic.woff) format('woff');
+}
+@font-face {
+    font-family: 'YashDJ';
+    src: url(../Fonts/Dited.woff) format('woff');
+}
 
-// // Layout
-// $base-radius: 1em;
-// $transition: all 0.35s ease-in-out;
+// COLORS
+$color-dark-brown: #432100;
+$color-white: #FFFFFF;
+$color-gray: #555555;
+$color-blue: #0055AA;
+$color-teal: #00AAAA;
+$color-gold: #AA8D00;
+$color-orange-dark: #AA5500;
+$color-orange: #FF8811;
+$color-orange-light: #FFBB77;
+$color-orange-lighter: #FFD4A8;
+$color-orange-lightest: #FFEDDB;
+$color-focus-shadow: palevioletred;
 
-// // Shadows
-// $shadow-light: 0 0.25em 0.5em rgba(0,0,0,0.12);
-// $shadow-medium: 0 0.5em 1em rgba(0,0,0,0.25);
-// $shadow-heavy: 0 0.75em 2em rgba(0,0,0,0.35);
+// TYPOGRAPHY
+$font-primary: 'YashuNameu', sans-serif;
+$font-display: 'YashDJ', cursive;
+$font-footer: Arial, sans-serif;
 
-
-// base/_variables.scss
-
-// --- Colors ---
-// A modern, deep navy blue palette
-$navy: #0a2351;
-$black: #1c1c1c; // Using a soft black instead of pure #000
-$white: #ffffff;
-$light-gray-bg: #f5f7fa; // A very light gray for section backgrounds
-$border-color: #e1e4e8;
-
-// --- Typography ---
-$font-primary: 'ABeeZee', sans-serif;
-$font-headings: 'Dited', serif;
-
-// --- Spacing ---
-// A base unit for consistent margins and padding
-$spacing-unit: 1rem; // (1rem is typically 16px)
+// SIZING & BORDERS
+$content-width: 46em;
+$border-radius-large: 2em;
