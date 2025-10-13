@@ -1,33 +1,13 @@
-// main.scss
+@import 'base/variables'; 
+@import 'base/reset';
+@import 'base/typography';
 
-// --------------------
-// BASE IMPORTS
-// --------------------
-@import "base/reset";
-@import "base/variables";
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/layout';
 
-// --------------------
-// COMPONENT IMPORTS
-// --------------------
-@import "components/mixins";
-@import "components/functions";
-@import "components/menu";
-@import "components/introduction";
-@import "components/mediaquery";
 
-// --------------------
-// GLOBAL STYLES
-// --------------------
-// body {
-//   font-family: $font-stack;
-//   background: linear-gradient(to bottom right, #F5F7FA, #E0E4FF);
-//   color: $secondary;
-// }
+@import 'components/forms';
+@import 'components/topics-list';
 
-// header {
-//   text-align: center;
-//   margin: 2em 0;
-
-//   h1 { font-size: 3em; color: $primary; }
-//   h2 { font-size: 1.5em; color: shade($secondary, 10%); }
-// }
+@import 'layout/responsive';

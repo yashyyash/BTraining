@@ -1,0 +1,53 @@
+/* layout/_layout.scss */
+
+#content {
+    position: relative;
+    padding: 0;
+    margin: auto;
+    width: $content-width;
+    border-radius: $border-radius-large;
+    box-shadow: 0 0 0.5em 0.16em $color-gray,
+                0.5em 0.5em 3em $color-blue,
+                -0.25em 0 3em $color-blue;
+
+    // Z-index logic for showing/hiding sections
+    > *:not(:target, #intro) {
+        z-index: -1;
+    }
+}
+
+:target {
+    z-index: 2;
+}
+
+article,
+section {
+    position: absolute;
+    background-color: $color-white;
+    padding: 1em;
+    height: 21em;
+    width: 44em;
+    border-bottom-left-radius: $border-radius-large;
+    border-bottom-right-radius: $border-radius-large;
+}
+
+#intro {
+    position: absolute;
+    z-index: 1;
+}
+
+#contact {
+    background-color: $color-white;
+}
+
+#about {
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    background: url(../images/cat.png) bottom left,
+                url(../images/savagecat.png) top right,
+                $color-white;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-size: auto, contain;
+}
