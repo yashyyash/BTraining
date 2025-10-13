@@ -1,0 +1,45 @@
+$primary-color: #9926f0;
+$secondary-color: #BB6EF5;
+$pink: #d122e3;
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    padding: 20px;
+}
+$primary-color:#3498db;
+$secondary-color: #2ecc71;
+
+h1{
+    color: $primary-color;
+}
+h6{
+    color: $secondary-color;
+}
+
+.primary-button {
+    background: linear-gradient(to right, rgba($primary-color, 0.95), rgba($secondary-color, 0.95));
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover {
+    background: linear-gradient(to right, rgba($secondary-color, 0.95), rgba($primary-color, 0.95));
+  }
+}
+
+.secondary-button {
+  background: linear-gradient(to right, rgba($secondary-color, 0.95), rgba($primary-color, 0.95));
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: linear-gradient(to right, rgba($primary-color, 0.95), rgba($secondary-color, 0.95));
+  }
+}

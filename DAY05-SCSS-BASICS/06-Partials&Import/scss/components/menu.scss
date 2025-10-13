@@ -1,0 +1,29 @@
+.menu {
+  background-color: $primary-color;
+  padding: $padding;
+  border-radius: $border-radius;
+
+  .menu-list {
+    list-style: none;
+    display: flex;
+    gap: $margin;
+
+    .menu-item {
+      .menu-link {
+        color: white;
+        text-decoration: none;
+        padding: $padding;
+        border-radius: $border-radius;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: $primary-color;
+        }
+
+        // &:hover {
+        //   background-color: darken($primary-color, 10%);
+        // }
+      }
+    }
+  }
+}
