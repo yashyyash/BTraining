@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.intro {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+.intro .intro-text {
+  margin-bottom: 15px;
+}
+.intro .intro-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.intro .intro-images .intro-image {
+  flex: 1 1 calc(33.333% - 15px);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.intro .intro-images .intro-image img {
+  width: 80%;
+  height: 60px;
+  display: inline-block;
+}
+
+.menu {
+  background-color: #9926f0;
+  padding: 20px;
+  border-radius: 5px;
+}
+.menu .menu-list {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.menu .menu-list .menu-item .menu-link {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.menu .menu-list .menu-item .menu-link:hover {
+  background-color: #9926f0;
+}
+
+/*# sourceMappingURL=styles.css.map */

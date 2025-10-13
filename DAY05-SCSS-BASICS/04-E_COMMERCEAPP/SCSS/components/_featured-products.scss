@@ -1,0 +1,38 @@
+.featured-products {
+  background-color: lighten($background-color, 10%);
+  padding: $padding;
+  z-index: 2;
+  @include text-center;
+
+  .product-list {
+    @include flex-container();
+
+    @for $i from 1 through 6 {
+      .product-item-#{$i} {
+        @include rounded-corners($border-radius);
+        @include box-sizing();
+
+        img {
+          @include fixed-dimensions(200px, 200px);
+          margin-bottom: $margin;
+        }
+
+        .product-info {
+          padding: $padding;
+          background-color: $secondary-color;
+          color: $link-color;
+          @include rounded-corners($border-radius);
+
+          h3 {
+            margin: 0;
+            margin-bottom: $margin;
+          }
+
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

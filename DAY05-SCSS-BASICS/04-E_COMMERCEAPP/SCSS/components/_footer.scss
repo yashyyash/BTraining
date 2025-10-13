@@ -1,0 +1,11 @@
+.footer {
+  background-color: $primary-color;
+  color: $link-color;
+  padding: $padding;
+  @include text-center;
+  @include rounded-corners($border-radius);
+
+  p {
+    margin: 0;
+  }
+}

@@ -1,0 +1,38 @@
+// // Colors
+// $primary: #FFD700;   // Gold
+// $secondary: #333333; // Dark Gray / Black shade
+// $accent: #FFFFFF;    // White
+// $dark: #000000;      // Pure Black
+// $light: #F5F5F5;    // Light Gray / off-white
+
+// // Typography
+// $font-stack: 'Segoe UI', Arial, sans-serif;
+// $heading-stack: 'Montserrat', sans-serif;
+
+// // Layout
+// $base-radius: 1em;
+// $transition: all 0.35s ease-in-out;
+
+// // Shadows
+// $shadow-light: 0 0.25em 0.5em rgba(0,0,0,0.12);
+// $shadow-medium: 0 0.5em 1em rgba(0,0,0,0.25);
+// $shadow-heavy: 0 0.75em 2em rgba(0,0,0,0.35);
+
+
+// base/_variables.scss
+
+// --- Colors ---
+// A modern, deep navy blue palette
+$navy: #0a2351;
+$black: #1c1c1c; // Using a soft black instead of pure #000
+$white: #ffffff;
+$light-gray-bg: #f5f7fa; // A very light gray for section backgrounds
+$border-color: #e1e4e8;
+
+// --- Typography ---
+$font-primary: 'ABeeZee', sans-serif;
+$font-headings: 'Dited', serif;
+
+// --- Spacing ---
+// A base unit for consistent margins and padding
+$spacing-unit: 1rem; // (1rem is typically 16px)

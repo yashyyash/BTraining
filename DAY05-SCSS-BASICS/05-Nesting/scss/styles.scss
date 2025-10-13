@@ -1,0 +1,67 @@
+// Variables
+$primary-color: #9926f0;
+$secondary-color: #BB6EF5;
+$pink: #d122e3;
+$background-color: #f0f0f0;
+$text-color: #333;
+// Container
+.container {
+//   background-color: $background-color;
+  background-color: linear-gradient(to right, rgba(255, 14, 14, 0.5) ,rgba(3, 217, 255, 0.4)) ;
+  color: $text-color;
+  padding: 20px;
+  border-radius: 10px;
+
+  // Header
+  .header {
+    background-color: $primary-color;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0 0;
+
+    // Header Title
+    .header-title {
+      margin: 0;
+      color: white;
+    }
+
+    // Navigation
+    .nav {
+      margin-top: 10px;
+
+      .nav-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+
+        .nav-item {
+          .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+
+            &:hover {
+              background-color: $secondary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Main Content
+  .main-content {
+    padding: 20px;
+  }
+
+  // Footer
+  .footer {
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+  }
+}

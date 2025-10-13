@@ -1,0 +1,27 @@
+.intro {
+  background-color: $background-color;
+  padding: $padding;
+  text-align: center;
+
+  .intro-text {
+    margin-bottom: $margin;
+  }
+
+  .intro-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $margin;
+
+    .intro-image {
+      flex: 1 1 calc(33.333% - #{$margin});
+      border-radius: $border-radius;
+      overflow: hidden;
+
+      img {
+        width: 80%;
+        height: 60px;
+        display: inline-block;
+      }
+    }
+  }
+}

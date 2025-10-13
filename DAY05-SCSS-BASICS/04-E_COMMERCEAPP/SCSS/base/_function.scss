@@ -1,0 +1,9 @@
+// Function to darken a color
+@function darken-color($color, $amount: 10%) {
+  @return darken($color, $amount);
+}
+
+// Function to calculate dimensions
+@function calc-dimension($value, $factor: 1) {
+  @return $value * $factor;
+}
