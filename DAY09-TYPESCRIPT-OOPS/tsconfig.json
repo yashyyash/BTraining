@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "outDir": "src",
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "noEmitOnError": true,
+        "sourceMap": true
+    }
+}
