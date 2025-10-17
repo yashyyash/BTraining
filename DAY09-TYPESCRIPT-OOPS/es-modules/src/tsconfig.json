@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "src",
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "noEmitOnError": true,
+        "sourceMap": true,
+        "module": "node16",
+        "moduleResolution": "node16",
+        "moduleDetection": "auto",
+    }
+}
