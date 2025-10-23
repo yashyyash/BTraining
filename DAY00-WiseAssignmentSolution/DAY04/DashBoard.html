@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard UI Replica</title>
+    <link rel="stylesheet" href="/DayWiseAssignmentSolution/DAY04/Style/DashBoard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <ul>
+                <li class="logo-icon"><i class="fa-solid fa-circle-nodes"></i></li>
+                <li class="active"><a href="#"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-info"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i></a></li>
+                <li class="logout-icon"><a href="#"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>Hello John !</h1>
+                    <p>Here is your daily statistic</p>
+                </div>
+                <div class="header-actions">
+                    <div class="date-picker">
+                        <span>29 may 2020</span>
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div class="user-info">
+                        <i class="fa-solid fa-bell"></i><span>Notification</span>
+                        <i class="fa-solid fa-comment"></i><span>Chat</span>
+                        <img src="https://i.pravatar.cc/40?img=1" alt="User Avatar" class="avatar">
+                    </div>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-content">
+                            <p class="card-title">Total order</p>
+                            <p class="card-value">10</p>
+                        </div>
+                        <div class="icon-content">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">More info <i class="fa-solid fa-caret-down"></i></a>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-content">
+                            <p class="card-title">Total earning (after taxes)</p>
+                            <p class="card-value">$91.73</p>
+                        </div>
+                        <div class="icon-content">
+                            <i class="fa-solid fa-coins"></i>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">More info <i class="fa-solid fa-caret-down"></i></a>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-content">
+                            <p class="card-title">Restaurants</p>
+                            <p class="card-value">3</p>
+                        </div>
+                        <div class="icon-content">
+                           <i class="fa-solid fa-utensils"></i>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">More info <i class="fa-solid fa-caret-down"></i></a>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="text-content">
+                            <p class="card-title">Total clients</p>
+                            <p class="card-value">2</p>
+                        </div>
+                        <div class="icon-content">
+                             <i class="fa-solid fa-users"></i>
+                        </div>
+                    </div>
+                    <a href="#" class="card-link">More info <i class="fa-solid fa-caret-down"></i></a>
+                </div>
+            </section>
+
+            <section class="analytics-grid">
+                <div class="card">
+                    <h2 class="card-header">Most Popular Days</h2>
+                    <div class="chart-container-donut">
+                         <div class="donut-chart"></div>
+                         <ul class="legend">
+                            <li><span class="dot sun"></span>Sun</li>
+                            <li><span class="dot mon"></span>Mon</li>
+                            <li><span class="dot wed"></span>Wed</li>
+                            <li><span class="dot thu"></span>Thu</li>
+                         </ul>
+                    </div>
+                </div>
+                <div class="card">
+                     <h2 class="card-header">Most Popular Time</h2>
+                     <div class="chart-container-bar">
+                        <div class="bar-chart">
+                            <div class="bar-item" style="height: 60%;"><span class="bar-label">4 Pm</span></div>
+                            <div class="bar-item" style="height: 80%;"><span class="bar-label">5 Pm</span></div>
+                            <div class="bar-item" style="height: 100%;"><span class="bar-label">8 Pm</span></div>
+                            <div class="bar-item" style="height: 40%;"><span class="bar-label">7 Pm</span></div>
+                            <div class="bar-item" style="height: 60%;"><span class="bar-label">9 Pm</span></div>
+                            <div class="bar-item" style="height: 70%;"><span class="bar-label">1 Pm</span></div>
+                        </div>
+                     </div>
+                </div>
+                <div class="card card-center">
+                    <h2 class="card-header">Average Advance Order Time</h2>
+                    <div class="time-display">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>26922 minutes</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="bottom-grid">
+                <div class="card">
+                    <h2 class="card-header">Most Loyal Customer</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Profile</th>
+                                    <th>Name</th>
+                                    <th>Profession</th>
+                                    <th>Order</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="https://i.pravatar.cc/30?img=7" alt="Avatar" class="table-avatar"></td>
+                                    <td>Seyi E.</td>
+                                    <td>Doctor</td>
+                                    <td>7</td>
+                                    <td class="rating"><i class="fas fa-star"></i> 5 star</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="https://i.pravatar.cc/30?img=8" alt="Avatar" class="table-avatar"></td>
+                                    <td>Rosalba</td>
+                                    <td>Teacher</td>
+                                    <td>5</td>
+                                    <td class="rating"><i class="fas fa-star"></i> 5 star</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="https://i.pravatar.cc/30?img=9" alt="Avatar" class="table-avatar"></td>
+                                    <td>Prather</td>
+                                    <td>Doctor</td>
+                                    <td>4</td>
+                                    <td class="rating"><i class="fas fa-star"></i> 4 star</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="see-more">See more <i class="fa-solid fa-caret-down"></i></a>
+                    </div>
+                </div>
+                <div class="card">
+                     <h2 class="card-header">Most Popular food</h2>
+                     <div class="chart-container-pie">
+                         <div class="pie-chart">
+                             <div class="pie-slice-text">Pizza</div>
+                         </div>
+                         <ul class="legend">
+                            <li><span class="dot montana"></span>Montana</li>
+                            <li><span class="dot carbonara"></span>Carbonara</li>
+                         </ul>
+                     </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>
