@@ -82,6 +82,52 @@ export class EmployeeList {
   protected handleEmployeeChildMessage(message: string): void {
     this.employeeChildmessage = message;
   }
+
+  protected sortColumn: string = '';
+protected sortDirection: 'asc' | 'desc' = 'asc';
+
+protected sortBy(column: string): void {
+  if (this.sortColumn === column) {
+    // toggle sort direction if same column clicked
+    this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+  } else {
+    // new column clicked, default to ascending
+    this.sortColumn = column;
+    this.sortDirection = 'asc';
+  }
+
+  this.filteredEmployee.sort((a: Employee, b: Employee) => {
+    let valA: any;
+    let valB: any;
+
+    switch (column.toLowerCase()) {
+      case 'employee id':
+        valA = a.employeeId;
+        valB = b.employeeId;
+        break;
+      case 'employee name':
+        valA = a.employeeName.toLowerCase();
+        valB = b.employeeName.toLowerCase();
+        break;
+      case 'city':
+        valA = a.city.toLowerCase();
+        valB = b.city.toLowerCase();
+        break;
+      case 'phone':
+        valA = a.phone;
+        valB = b.phone;
+        break;
+      default:
+        valA = '';
+        valB = '';
+    }
+
+    if (valA < valB) return this.sortDirection === 'asc' ? -1 : 1;
+    if (valA > valB) return this.sortDirection === 'asc' ? 1 : -1;
+    return 0;
+  });
+}
+
 }
 
 
