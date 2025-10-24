@@ -1,22 +1,17 @@
 // function overloading with 3 parameters, 1 parameter, 2 parameter & 4 default
-
 function sum(): number;
 function sum(a: number): number;
 function sum(a: number, b: number): number;
 function sum(a: number, b: number, c: number): number;
-
 function sum(a = 10, b = 20, c = 30, d = 40): number {
     return a + b + c + d;
 }
-
 console.log(sum());           
 console.log(sum(5));          
 console.log(sum(1, 2));       
 console.log(sum(1, 2, 3));   
 
-
 // create a demo class within a constructor overloading & method overloading
-
 class Demo {
     constructor();
     constructor(value: string|number|boolean);
@@ -55,11 +50,6 @@ console.log(d3.DemoSum());
 console.log(d3.DemoSum(1));
 console.log(d3.DemoSum(1,2));
 console.log(d3.DemoSum(7899,788,99));
-
-
-
-
-
 
 // Create Employee Array Interfaces as DS add one optional property
 // Define an Employee interface
