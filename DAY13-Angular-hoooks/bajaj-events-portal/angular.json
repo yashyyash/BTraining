@@ -25,13 +25,13 @@
               }
             ],
             "styles": [
+              "DAY13-Angular-hoooks/bajaj-events-portal/node_modules/bootswatch/dist/lux/bootstrap.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
-
           },
           "configurations": {
             "production": {
