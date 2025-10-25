@@ -25,6 +25,10 @@ export class EventsApi{
   public getAllEmployees():Observable<Employee[]>{
     return this._httpClient.get<Employee[]>(`${this.baseUrl}/employees`);
   }
+
+  public getEmployeeDetails(employeeId: number): Observable<Employee> {
+  return this._httpClient.get<Employee>(`${this.baseUrl}/employees/${employeeId}`);
+  }
 }
 // // export class EventsApi {
 // //   private events: Event[] = [

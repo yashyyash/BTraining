@@ -161,7 +161,7 @@
 // }
 
 
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject , EventEmitter, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Employee } from '../../model/employee';
@@ -177,6 +177,7 @@ import { EventsApi } from '../../services/events-api';
   styleUrls: ['./employee-list.css'],
 })
 export class EmployeeList implements OnInit {
+   @Input() employeeId!: number;
   protected title: string = "Welcome to Bajaj finserv Employee List Component!";
   protected subTitle: string = "Subtitle - Welcome to Bajaj finserv Employee List Component!";
   protected columns: string[] = ["employee id", "employee name", "city", "phone", "show details"];
@@ -190,6 +191,7 @@ export class EmployeeList implements OnInit {
 
   private _employeeservicesubsription!: Subscription;
   private _employeeApi: EventsApi = inject(EventsApi);
+  
 
   ngOnInit(): void {
     this._employeeservicesubsription = this._employeeApi.getAllEmployees().subscribe({
@@ -214,10 +216,25 @@ export class EmployeeList implements OnInit {
     console.log(this.filteredEmployee);
   }
 
-  protected onSelectedEmployee(employee: Employee): void {
-    console.log("Employee selected: ", employee);
-    this.selectedEmployee = employee;
-  }
+  // protected onSelectedEmployee(employee: Employee): void {
+  //   console.log("Employee selected: ", employee);
+  //   this.selectedEmployee = employee;
+  // }
+
+protected selectedEmployeeId!: number;
+
+protected onSelectedEmployee(employeeId: number): void {
+  this.selectedEmployeeId = employeeId;
+
+  this._employeeApi.getEmployeeDetails(employeeId).subscribe({
+    next: (employeeData) => {
+      console.log("Employee selected: ", employeeData);
+      this.selectedEmployee = employeeData;
+    },
+    error: (err) => console.error('Error fetching employee details:', err)
+  });
+}
+
 
   protected handleEmployeeChildMessage(message: string): void {
     this.employeeChildmessage = message;
