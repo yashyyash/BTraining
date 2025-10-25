@@ -1,22 +1,53 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges, inject } from '@angular/core';
 import { Employee } from '../../model/employee';
+import { EventsApi } from '../../services/events-api';
 
 @Component({
   selector: 'app-employee-details',
-  imports: [],
+  standalone: true,
   templateUrl: './employee-details.html',
-  styleUrl: './employee-details.css',
+  styleUrls: ['./employee-details.css'],
+  imports: []
 })
-export class EmployeeDetails {
+export class EmployeeDetails implements OnInit, OnChanges {
   protected title: string = "Details of - ";
-  @Input() public employee:Employee ;
-  @Input() public subTitle:string ;
 
-  @Output() public sendConfirmationMessage: EventEmitter<string> = new EventEmitter<string>();
-  
+  @Input() public employeeId!: number;
+  @Input() public subTitle!: string;
 
-  protected onEventProcessed():void {
-    //fire an evnt to send data to parent component
-    this.sendConfirmationMessage.emit(`The event ${this.employee.employeeName} has been processed successfully!`);
+  @Output() public sendConfirmationMessage = new EventEmitter<string>();
+
+  protected employee!: Employee;
+  protected isLoading = true;
+
+  private eventsApi = inject(EventsApi);
+
+  ngOnInit(): void {
+    this.fetchEmployeeDetails();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['employeeId'] && !changes['employeeId'].firstChange) {
+      this.fetchEmployeeDetails();
+    }
+  }
+
+  private fetchEmployeeDetails(): void {
+    this.isLoading = true;
+    this.eventsApi.getEmployeeDetails(this.employeeId).subscribe({
+      next: (data) => {
+        this.employee = data;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error("Error fetching employee details:", err);
+        this.isLoading = false;
+      }
+    });
+  }
+
+  protected onEventProcessed(): void {
+    this.sendConfirmationMessage.emit(`The employee ${this.employee.employeeName} has been processed successfully!`);
   }
 }
+``
