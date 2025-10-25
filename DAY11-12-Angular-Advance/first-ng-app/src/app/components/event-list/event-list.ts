@@ -181,8 +181,8 @@ export class EventList implements OnInit {
         default: valA = ''; valB = '';
       }
 
-      if (valA < valB) return this.sortDirection === 'asc' ? -1 : 1;
-      if (valA > valB) return this.sortDirection === 'asc' ? 1 : -1;
+      if (valA < valB) return this.sortDirection === 'asc' ? -1 : 1; // value a is lesser hence -1
+      if (valA > valB) return this.sortDirection === 'asc' ? 1 : -1; // 
       return 0;
     });
 
