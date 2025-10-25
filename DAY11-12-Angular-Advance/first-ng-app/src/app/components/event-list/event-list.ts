@@ -100,7 +100,7 @@ import { EventDetails } from '../event-details/event-details';
 import { EventsApi } from '../../services/events-api';
 import { DateGlobalizationPipe } from '../../pipes/date-globalization-pipe';
 import { LowecaseTruncPipe } from '../../pipes/lowecase-trunc-pipe';
-
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-event-list',
   standalone: true,
@@ -125,6 +125,7 @@ export class EventList implements OnInit {
   protected events: Event[] = [];
   protected filteredEvents: Event[] = [];
   protected selectedEvent!: Event;
+  protected selectedEventId: number;
 
   protected searchChars = '';
   protected pageNumber = 1;
@@ -137,15 +138,37 @@ export class EventList implements OnInit {
   protected childmessage = '';
   public childSubtitle = "Details of selected event!";
 
+  private _eventservicesubscription:Subscription;
+
+
   constructor() {
-    this.events = this.eventApi.getAllEvents();
-    this.filteredEvents = [...this.events];
+    // this.events = this.eventApi.getAllEvents();
+    // this.filteredEvents = [...this.events];
   }
 
+  // ngOnInit(): void {
+  //   this.events = this.eventApi.getAllEvents().subscribe({
+  //     next:eventsData=>console.log(eventsData),
+  //     this.events = eventsData;
+  //     thisFilreedEvents = [...this.events]
+  //   },
+  //     error:err = > console.log(err)
+  //     ;
+  //   });
+  //   this.filteredEvents = [...this.events];
+  // }
   ngOnInit(): void {
-    this.filteredEvents = [...this.events];
-  }
-
+  this._eventservicesubscription = this.eventApi.getAllEvents().subscribe({
+    next: (eventsData) => {
+      console.log(eventsData);
+      this.events = eventsData;
+      this.filteredEvents = [...this.events];
+    },
+    error: (err) => {
+      console.log(err);
+    }
+  });
+}
   // Search logic
   protected searchEvents(): void {
     const searchLower = this.searchChars.trim().toLowerCase();
@@ -190,12 +213,19 @@ export class EventList implements OnInit {
   }
 
   // Event selection for child component
-  protected onSelectedEvent(event: Event): void {
-    this.selectedEvent = event;
+  protected onSelectedEvent(id:number): void {
+    // this.selectedEvent = event;
+    this.selectedEventId = id ;
   }
 
   // Receive message from child
   protected handleChildMessage(message: string): void {
     this.childmessage = message;
+  }
+
+  ngOnDestroy():void{
+    if(this._eventservicesubscription){
+      this._eventservicesubscription.unsubscribe();
+    };
   }
 }
