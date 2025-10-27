@@ -1,0 +1,25 @@
+http://localhost:9090/api/events [get]
+http://localhost:9090/api/events [post]
+http://localhost:9090/api/events/1002 [get]
+
+http://localhost:9090/api/employees [get]
+http://localhost:9090/api/employees  [post]
+http://localhost:9090/api/employees/1002 [get]
+
+
+http/ajax calls in angular framework
+    @angular/common/http/HttpClient --> this will be injected as a service in other client 
+    [Class] [Use it via Dependency Injection]
+    when we have this guy we can perform the crud operations 
+        in http [GET,POST,PUT,DELETE] 
+                1 ) get ().  -> GENERAL METHOD
+                2 ) get<T>   -> GENERIC METHOD
+                both the above methods give observable<T>
+                1> get()/get<T>(url, reqOptions:{}) -> observable<t>
+                2 >post()/get<T>(url, reqOptions:{}) -> observable<t>
+                3 >put()/get<T>(url, reqOptions:{}) -> observable<t>
+                4 >delete()/get<T>(url, reqOptions:{}) -> observable<t>
+
+Reactive Extensions for Javascript library[Rxjs]
+    the core object of rxjs is an observable<T>
+    
