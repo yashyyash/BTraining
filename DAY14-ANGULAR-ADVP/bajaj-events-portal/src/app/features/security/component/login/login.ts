@@ -21,7 +21,12 @@ export class Login {
 
 
     protected onCredentialSubmit():void{
-      console.log(this.user);
+      // console.log(this.user);
+      this._securityApi.authenticateCredentials(this.user).subscribe({
+        next:response => {
+          console.log(response);
+        }
+      });
     }
 
 
