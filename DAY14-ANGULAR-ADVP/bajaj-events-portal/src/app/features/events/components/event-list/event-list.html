@@ -5,13 +5,13 @@
 @if(childmessage){
   <p>{{childmessage}}</p>
 }
-
+ 
 <div class="container row mb-3">
   <input type="search" id="inputSearch" class="form-control"
          placeholder="Search Events by event name" [(ngModel)]="searchChars"
          (input)="searchEvents()">
 </div>
-
+ 
 <table class="table table-hover table-striped">
   <thead>
     <tr>
@@ -35,23 +35,28 @@
         <td><span>{{event.startDate.toString() | dateGlobalization}}</span></td>
         <td><span>{{event.fees | currency}}</span></td>
         <td>
-          <button class="btn btn-dark" (click)="onSelectedEvent(event.eventId)">Show Details</button>
+          <!-- <button class="btn btn-dark" (click)="onSelectedEvent(event.eventId)">Show Details</button> -->
+           <a class="btn btn-primary" [routerLink]="['/events', event.eventId]">Show details</a>
         </td>
       </tr>
     }
   </tbody>
 </table>
-
+ 
 <div class="my-pagination text-center row">
   <pagination-controls (pageChange)="pageNumber = $event"></pagination-controls>
 </div>
-
-@if(selectedEventId>0){
+ 
+ 
+<!-- @if(selectedEventId>0){
+ 
   <app-event-details [eventid]="selectedEventId"
                      [subTitle]="childSubtitle"
                      (sendConfirmationMessage)="handleChildMessage($event)">
   </app-event-details>
-}
+} -->
 } @else {
 <h3>No Events Found</h3>
 }
+ 
+ 

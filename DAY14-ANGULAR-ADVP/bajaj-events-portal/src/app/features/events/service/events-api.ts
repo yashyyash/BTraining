@@ -12,6 +12,7 @@ import { Employee } from '../../employees/model/employee';
 export class EventsApi{
   private baseUrl:string = "http://localhost:9090/api";
   private _httpClient = inject(HttpClient);
+  private _activatedRoute: any;
   
   public getAllEvents():Observable<Event[]>
   {

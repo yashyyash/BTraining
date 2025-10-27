@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { EpHome } from "./features/home/ep-home/ep-home";
 import { EmployeeList } from "./features/employees/components/employee-list/employee-list";
 import { EventList } from "./features/events/components/event-list/event-list";
+import { ResorceNotFound } from "./shared/components/resorce-not-found/resorce-not-found";
 export const routes :Routes= [
     {
         path:" ",//default Route
@@ -22,6 +23,16 @@ export const routes :Routes= [
         path:"events",
         component:EventList,
         title : "event list"
+    },
+    {
+        path:"events/:id",
+        loadComponent:()=>import("./features/events/components/event-details/event-details").then(ed=>ed.EventDetails),
+        title:"Event Details"
+    },
+    {
+        path:"**",
+        component : ResorceNotFound,
+        title:"not found -404"
     }
 ];
 
