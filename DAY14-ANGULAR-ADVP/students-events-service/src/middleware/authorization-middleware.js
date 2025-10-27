@@ -3,7 +3,7 @@ const { verifyAccessToken } = require("../utility-functions");
 
 async function authorizationMiddleware(request, response, next) {
   let token =
-    request.headers["synechron-authorization-token"] ||
+    request.headers["bajaj-authorization-token"] ||
     request.body.token ||
     request.query.token;
     console.log(token);

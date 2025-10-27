@@ -23,3 +23,7 @@ http/ajax calls in angular framework
 Reactive Extensions for Javascript library[Rxjs]
     the core object of rxjs is an observable<T>
     
+
+
+    http://localhost:9090/api/users/ [login post]
+    http://localhost:9090/api/users.  [post signup refigsrer]
