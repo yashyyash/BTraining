@@ -20,11 +20,22 @@ export class SecurityApi {
       }
     }).pipe(tap({
       next: response => {
+        if(response.token){
         localStorage.setItem("token",response.token);
         localStorage.setItem("refresh",response.refreshToken);
         localStorage.setItem("role",response.role);
         localStorage.setItem("token",response.email);
+        }
       }
-    }))
+    }));
+  }
+  getToken():string | null {
+    return `${localStorage.getItem('token')}`;
+  }
+  getRole():string | null {
+    return `${localStorage.getItem('role')}`;
+  }
+  logout():void{
+    localStorage.clear();
   }
 }
