@@ -5,6 +5,7 @@ import { Event } from '../../events/model/event';
 
 import { Observable } from 'rxjs';
 import { Employee } from '../../employees/model/employee';
+import { CudResponse } from '../../../shared/models/cud-response';
 
 
 @Injectable({
@@ -30,6 +31,10 @@ export class EventsApi{
 
   public getEmployeeDetails(employeeId: number): Observable<Employee> {
   return this._httpClient.get<Employee>(`${this.baseUrl}/employees/${employeeId}`);
+  }
+
+  public scheduleNewEvent(event:Event){
+    return this._httpClient.post<CudResponse>(`${this.baseUrl}/events`,event);
   }
 }
 // // export class EventsApi {

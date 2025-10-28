@@ -4,6 +4,7 @@ import { EmployeeList } from "./features/employees/components/employee-list/empl
 import { EventList } from "./features/events/components/event-list/event-list";
 import { Login } from "./features/security/components/login/login";
 import { RegisterEvent } from "./features/events/components/register-event/register-event";
+import { EventDetails } from "./features/events/components/event-details/event-details";
 export const routes :Routes= [
     {
         path:" ",//default Route
@@ -24,6 +25,11 @@ export const routes :Routes= [
         path:"events",
         component:EventList,
         title : "Event list"
+    },
+        {
+        path:"events/:id",
+        component:EventDetails,
+        title : "Event Details"
     },
     {
         path:"events/register",
