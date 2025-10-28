@@ -1,0 +1,14 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <label>Employee ID: <input formControlName="employeeId" type="number"></label>
+  <label>Name: <input formControlName="employeeName"></label>
+  <label>Address: <input formControlName="address"></label>
+  <label>City: <input formControlName="city"></label>
+  <label>Zipcode: <input formControlName="zipcode" type="number"></label>
+  <label>Phone: <input formControlName="phone"></label>
+  <label>Email: <input formControlName="email" type="email"></label>
+  <label>Skills: <input formControlName="skillSets"></label>
+  <label>Country: <input formControlName="country"></label>
+  <label>Joining Date: <input formControlName="joiningDate" type="date"></label>
+  <label>Avatar URL: <input formControlName="avatar"></label>
+  <button type="submit">Register</button>
+</form>

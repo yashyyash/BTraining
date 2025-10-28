@@ -4,7 +4,7 @@ import { EmployeeList } from "./features/employees/components/employee-list/empl
 import { EventList } from "./features/events/components/event-list/event-list";
 import { Login } from "./features/security/components/login/login";
 import { RegisterEvent } from "./features/events/components/register-event/register-event";
-import { EventDetails } from "./features/events/components/event-details/event-details";
+import { RegisterEmployeeComponent } from "./features/employees/components/register-employee/register-employee";
 export const routes :Routes= [
     {
         path:" ",//default Route
@@ -22,14 +22,14 @@ export const routes :Routes= [
         title : "Employee list"
     },
     {
+        path:"employees/register",
+        component:RegisterEmployeeComponent,
+        title : "Employee list"
+    },
+    {
         path:"events",
         component:EventList,
         title : "Event list"
-    },
-        {
-        path:"events/:id",
-        component:EventDetails,
-        title : "Event Details"
     },
     {
         path:"events/register",
