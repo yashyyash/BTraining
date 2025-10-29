@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -7,6 +7,16 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('second-app');
+export class App implements OnInit, OnDestroy {
+  protected remote1Message!:string;
+ 
+  ngOnInit(): void {
+    window.addEventListener('messageFromFirstApp', (event) => {
+      const customEvent = event as CustomEvent;
+      this.remote1Message = customEvent.detail?.['morningMessage'];
+    })
+  }
+   ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
 }
