@@ -9,4 +9,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('first-app');
+  sendMessageToRemTocom(): void {
+    window.dispatchEvent(new CustomEvent('messageFromFirstApp', { detail:{
+        morningMessage:'Welcome to Bajaj Finserve message from Remote - 1 Application'
+      } 
+    }));
+  }
 }
