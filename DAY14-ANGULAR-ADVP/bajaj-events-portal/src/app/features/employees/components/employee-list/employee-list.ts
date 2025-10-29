@@ -128,7 +128,7 @@ import { Subscription } from 'rxjs';
 import { Employee } from '../../model/employee';
 import { EmployeeApi } from '../../service/employee-api';
 import { EmployeeDetails } from '../employee-details/employee-details';
-import { EmployeeRegistration, InsertResponse } from '../model/employee-registration/employee-registration';
+import { EmployeeRegistration } from '../../model/employee-registration/employee-registration';
 @Component({
   selector: 'app-employee-list',
   standalone: true,

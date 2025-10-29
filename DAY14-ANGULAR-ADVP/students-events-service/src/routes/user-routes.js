@@ -45,7 +45,7 @@ userRoutes.post("/refresh", async (request, response) => {
     const refreshToken = request.body.refreshToken;
     const userInfo = await verifyRefreshToken(refreshToken);
     const newToken = await generateAccessToken(userInfo.email, userInfo.role);
-    response.status(200).json({ newAccessToken: newToken });
+    response.status(200).json(newToken);
   } catch (error) {
     response.status(400).json(error);
   }

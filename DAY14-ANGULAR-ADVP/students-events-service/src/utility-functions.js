@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 function generateAccessToken(email, role) {
   return new Promise((resolve, reject) => {
     let token = jwt.sign({ email, role }, process.env.ACCESS_TOKEN_SECRET, {
-      expiresIn: "30m",
+      expiresIn: "1m",
     });
     resolve({
       email,
@@ -15,7 +15,7 @@ function generateAccessToken(email, role) {
 function generateRefreshToken(email, role) {
   return new Promise((resolve, reject) => {
     let token = jwt.sign({ email, role }, process.env.REFRESH_TOKEN_SECRET, {
-      expiresIn: "30d",
+      expiresIn: "30m",
     });
     resolve({
       token,
